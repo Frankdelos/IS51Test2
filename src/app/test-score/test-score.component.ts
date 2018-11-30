@@ -73,16 +73,17 @@ export class TestScoreComponent implements OnInit {
   
   saveToLocalStorage(){
     localStorage.setItem('tests', JSON.stringify(this.tests));
+    this.toastService.showToast('success', 5000, 'Success: Items Saved');
   
   }
 
-  calculate (){
+  calculate (test: ITest){
     
 
   }
   computeGrade(){
-    const data = this.calculate();
-    this.router.navigate(['home', data]);
+    this.router.navigate(['home']);
+  
     }
 
   searchBar(params: string){
