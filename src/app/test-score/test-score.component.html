@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary main-nav">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <input class="form-control mr-sm-2" type="search" placeholder="Enter your name (Last, First)" aria-label="Search" name="search" (click)="searchBar(params)">
+    <input [(ngModel)]= "nameParams" class="form-control mr-sm-2" type="search" placeholder="Enter your name (Last, First)" aria-label="Search" name="search">
   </div>
 </nav>
 
@@ -9,7 +9,7 @@
     <button mat-raised-button color="primary" (click)="addTest()">Add Test</button>
   </li>
   <li class="nav-item">
-    <button mat-raised-button color="primary" (click)="computeGrade()">Compute Grade</button>
+    <button mat-raised-button color="primary" (click)="compute()">Compute Grade</button>
   </li>
 </ul>
 
@@ -49,8 +49,8 @@
       </mat-card-content>
       <mat-card-actions>
         <div class="btn-group pull-right">
-          <button mat-raised-button color="primary" class="pull-right" (click)="saveToLocalStorage()">Save</button>
-          <button mat-raised-button color="warn" (click)="deleteItem()">Delete</button>
+          <button mat-raised-button color="primary" class="pull-right" (click)="save('tests', tests)">Save</button>
+          <button mat-raised-button color="warn" (click)="deleteItem(i)">Delete</button>
         </div>
       </mat-card-actions>
     </mat-card>
